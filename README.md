@@ -24,3 +24,8 @@ The tool separates the logic for running the export and the actual workspace dat
 ## How it works
 
 This repo contains a GitHub workflow that runs every day and for every push to this repo. The workflow will execute the script which makes an export request to Notion, waits for it to finish and downloads the workspace content to a temporary directory. The workflow will then commit this directory to the repository configured in the repo secrets.
+
+# Keenster's small changes
+
+1. Change timezone to Asia/Shanghai for China users. 
+2. Add flattenExportFiletree option to create folders for subpages.

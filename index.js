@@ -90,7 +90,7 @@ const run = async () => {
   const workspaceDir = join(process.cwd(), `workspace`);
   const workspaceZip = join(process.cwd(), `workspace.zip`);
 
-  await exportFromNotion(workspaceZip, `markdown`);
+  await exportFromNotion(workspaceZip, `html`);
   await rm(workspaceDir, { recursive: true, force: true });
   await mkdir(workspaceDir, { recursive: true });
   await extract(workspaceZip, { dir: workspaceDir });

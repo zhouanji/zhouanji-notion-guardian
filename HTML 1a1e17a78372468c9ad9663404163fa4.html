@@ -1,0 +1,721 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>HTML</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a1e17a7-8372-468c-9ad9-663404163fa4" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌐</span></div><h1 class="page-title">HTML</h1></header><div class="page-body"><nav id="ee4290f5-44e7-4aff-8cec-b0eefb87dad8" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#16d6a589-fb36-46b6-a57a-084cb8626535">HTML 概述</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#215cddc7-fdc6-4c94-9c79-c89cd44c3508">元素</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0e9487a0-8508-4e51-a843-8be0ad176930">元素概述</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d5170e1b-ef6c-448d-910f-cdbac8927221">元素列表</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f72989ff-9be8-425c-90b1-3a8a11d32607">Web 相关知识</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ea1f09e5-dcc7-42b1-81e8-6251baa485c0">CSS</a></div></nav><p id="9a28184a-2aee-4280-af69-bc9673ef4c66" class="">
+</p><h1 id="16d6a589-fb36-46b6-a57a-084cb8626535" class="">HTML 概述</h1><p id="60674242-a1d9-4b80-a29e-379becdbc99e" class="">
+</p><p id="ba2e5ab8-d2a1-414f-b27f-de5a34e42f24" class=""><strong>HTML5</strong><div class="indented"><p id="1c407533-60cb-4247-ae9f-5cabd4d0e1fc" class=""><span style="border-bottom:0.05em solid">向后兼容性</span>（”活标准“，不会继续更新版本号）：<div class="indented"><p id="43f39a25-f90c-47b2-b651-c3b03454acd9" class="">随着技术发展继续向HTML标准中增加内容，浏览器会同时支持新内容和旧内容</p></div></p><p id="f67c0d8b-12dd-4bcb-b000-b6e69b998ec7" class="">目的是从 <del>建立Web页面</del> 向 <span style="border-bottom:0.05em solid">建立Web应用</span> 发展，完成更多交互和复杂功能</p><p id="da5e4e7a-ad8a-4493-b810-23f3c437e18b" class="">W3C验证工具（HTML5标准）：http://validator.w3.org 验证某页面HTML代码是否符合标准</p></div></p><p id="7d870cd6-2674-4908-a5d9-a74e49c1e9bb" class="">
+</p><p id="4ba58d13-b676-49b7-af75-701319f33532" class=""><strong>HTML &amp; CSS 用途</strong><div class="indented"><p id="ed2b4b60-4d3f-4519-b3ad-86415f59f371" class="">HTML：建立内容的结构；</p><p id="bbb44344-fbe2-49b1-b644-57c2b43e435f" class="">CSS：提供样式和表现；</p></div></p><p id="2cb583e5-3d7e-4353-8de8-3799ead66b73" class="">
+</p><p id="87558521-b860-4044-b6e8-363d8bb5416c" class=""><strong>代码模板</strong></p><pre id="9dfce390-8c24-4126-8370-7d0cb36e1057" class="code"><code>&lt;!doctype html&gt;                        &lt;!-- 声明使用 HTML5 标准 --&gt;
+
+&lt;html&gt;
+	
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;             &lt;!-- 指定字符编码（&lt;meta&gt;元素需在&lt;head&gt;最开头） --&gt;
+		&lt;title&gt;  &lt;/title&gt;                  &lt;!-- 页面标题栏 --&gt;
+		&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;xxxx.css&quot;&gt;       &lt;!-- 外部 CSS 样式 --&gt;
+		&lt;style type=&quot;text/css&quot;&gt;                                       &lt;!-- 内部 CSS 样式 --&gt;
+			body {                                                           &lt;!-- body 元素样式 --&gt;
+				background-color: #d2b48c;
+				margin_left: ...;
+			}
+		&lt;/style&gt;
+		...
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		...
+	&lt;/body&gt;
+
+&lt;/html&gt;</code></pre><p id="f9de946f-fa90-4a4c-b58c-b6006c309964" class="">
+</p><p id="58740b67-7c54-4bb5-ab44-9ab0efbf0065" class=""><strong>文件夹结构</strong><div class="indented"><p id="0af554e1-4d9b-4513-b290-142c1e7d403c" class="">应该对网页和资源进行分类，并以此组织文件夹结构</p><p id="2ab84cb5-50c1-4617-a1c7-3ab5cc3ad37a" class="">分类时应考虑资源/网页的重用：例如，将所有图片放入一个images文件夹，则其中的图片可以被多个网页以相同的 URL 引用</p><p id="a234bf73-bced-44dc-a601-eba9f76abd0b" class=""><mark class="highlight-red_background">分类时应考虑安全性？避免他人爬取？</mark></p></div></p><p id="e9746cb3-e475-4ce7-bf99-79419948ad48" class="">
+</p><p id="cfdf8ee1-1928-4d7c-8275-9691456815f5" class=""><strong>字符实体（转义字符） </strong><strong><code>&amp;</code></strong><strong> </strong><div class="indented"><p id="3723e0c5-4b0e-4ab5-9732-72f9f464ca59" class="">http://www.unicode.org/charts/</p><p id="0796c8ef-5c5c-4537-8265-79a676242732" class="">所有字符都有 编号，但只有其中的部分有 实体名， <code>&amp;编号</code> 和 <code>&amp;实体名</code> 等价</p><p id="439d8689-5005-47d0-99cf-f7c49c3c76ef" class="">不保证所有浏览器都能正常显示 </p></div></p><p id="b8af0227-e935-4153-b35d-ce86e7661571" class="">
+</p><h1 id="215cddc7-fdc6-4c94-9c79-c89cd44c3508" class="">元素</h1><h2 id="0e9487a0-8508-4e51-a843-8be0ad176930" class="">元素概述</h2><p id="a10d3741-34ae-49ba-a4c4-b097bc8df754" class="">
+</p><p id="87321518-8bc6-4905-a31b-f305d97f73ba" class=""><strong>元素属性</strong><div class="indented"><p id="d9199076-c9d6-4192-a3cc-3e27eb3e3ead" class="">元素的开始标记内可以定义属性</p><p id="a2e84095-09ca-45e0-b4f3-94c0fc63e57e" class=""><code>&lt;元素名 属性名=&quot;属性值&quot;&gt; 元素内容 &lt;/元素名&gt;</code></p><p id="880ca12a-a8e9-46c7-a224-1826fd931d7a" class="">HTML5 支持定制元素属性</p></div></p><p id="8e87a581-eabd-48bc-84b0-853820da17ac" class="">
+</p><p id="a382fb8c-7375-422c-8fb0-1bb69eaa8e90" class=""><strong>块元素 &amp; 内联元素</strong><div class="indented"><p id="ae2f96f0-7c2e-4a63-b7d2-4bbaa2bf668f" class="">块（block）元素：<div class="indented"><p id="6eed39b9-c300-4582-b773-cbfc3cd81c02" class="">显示效果：显示时前后各有一个换行</p><p id="215a6a01-3ea0-412c-a46e-76f3859cfd3b" class="">使用时机：构建页面初期自顶向下进行分块</p><p id="9a1cfee6-97a5-4058-bcaf-c80513d5b8f7" class=""><code>&lt;h&gt;</code> <code>&lt;ul&gt;</code> <code>&lt;li&gt;</code> <code>&lt;blockquote&gt;</code> </p></div></p><p id="f94f7490-d925-44f5-87f8-f51692684fb8" class="">内联（inline）元素：<div class="indented"><p id="b1d2fb9f-cd8b-43aa-8d53-11a1d695deb4" class="">显示效果：显示在页面文本流的行内</p><p id="32623f54-5a14-40d9-9278-5b1cc8cdae26" class="">使用时机：完善页面时在块内部加入</p><p id="67145f32-7f98-4211-b9d5-e84cee8309da" class=""><code>&lt;img&gt;</code> <code>&lt;em&gt;</code> <code>&lt;q&gt;</code> </p></div></p><p id="90ad0a92-9780-4906-84da-5e66b7ee7e23" class=""><em>有些元素既是也是：</em> <code>&lt;a&gt;</code></p><p id="bc7279f1-4d04-434a-9a80-0f095b2f031d" class=""><em>有些元素既不是也不是：</em> <code>&lt;br&gt;</code></p></div></p><p id="f50c1848-66b9-4b07-9ef5-01bef8552069" class="">
+</p><p id="5dd7e9ba-4169-42d9-939b-d615e7b7acb4" class=""><strong>正常元素 &amp; Void 元素</strong><div class="indented"><p id="3bcd464f-04ae-4b72-9f70-64e508168d44" class="">正常元素：必须包含内容的元素 —— &lt;开始标签&gt; + 内容 + &lt;结束标签&gt;</p><p id="25e34be1-694a-4f61-a0fa-3fe60c175eba" class="">Void 元素：没有任何内容的元素 —— &lt;开始标签&gt;<div class="indented"><p id="c8d3294a-4f0f-4dea-85e7-83c0007cbb80" class=""><code>&lt;br&gt;</code> <code>&lt;img&gt;</code> </p></div></p><p id="7ea94141-05d5-45a7-ae2c-d4bf5db40e05" class=""><em>正常元素和Void元素之间没有交集！不存在既是A又是B的元素！</em></p></div></p><p id="fb4f0462-e8f2-4931-90f8-f34b991e0d6e" class="">
+</p><p id="7d39ed59-563c-4960-9cc5-7585d439ed76" class=""><strong><code>id</code></strong><strong> 属性</strong><div class="indented"><p id="65f6017e-004e-4b88-a150-1cf3bad9d3cc" class="">元素的唯一标识（命名需要确保在页面内唯一）</p><p id="6972b51c-dac9-4c9f-8d31-7b156194d0b5" class="">命名区分大小写</p><p id="e671c698-984c-4e82-bf8e-eadb6db48715" class="">可以作为 <code>&lt;a&gt;</code> 元素 <code>href</code> 属性 链接的锚点</p><p id="2c59c4eb-eb38-43d4-89cc-0e7f41d33f5d" class="">可以作为 CSS 选择器的对象</p></div></p><p id="94d5bc82-d4cd-400d-b364-2bc64099e06f" class="">
+</p><p id="9fa54352-db52-47b3-867a-f79d98ef580a" class=""><strong><code>title</code></strong><strong> 属性</strong><div class="indented"><p id="40d85f2e-30fc-4b33-850a-64c4e4b9ea8b" class="">对 元素内容 or 元素点击行为 的文本描述</p><p id="c38aed83-d86a-4e9a-9e94-8aefbcea30d8" class="">浏览器的处理方式：鼠标悬浮展示信息；视障人士辅助 等等</p></div></p><p id="2509bc49-cea6-4aa6-9ac2-f4251ff514d3" class="">
+</p><p id="82b14067-0ffe-4cd3-8c1c-d7b8d8e10f25" class=""><strong><code>class</code></strong><strong> 属性</strong><div class="indented"><p id="91683b02-30d6-4a39-98d8-449be4466c85" class="">为元素实例进行分组命名，方便 CSS 选择器进行多个元素的选择</p><p id="1a3297af-9883-4bee-8fb0-9df17bafde39" class="">不同元素可以属于相同类 <code>&lt;元素名1 class=”类名”&gt;</code> <code>&lt;元素名2 class=”类名”&gt;</code></p><p id="3c9ddd18-b5c0-4172-8475-96a08a0ba393" class="">相同元素可以属于不同类 <code>&lt;元素名 class=”类名1 类名2 类名3 类名4 ……”&gt;</code></p></div></p><p id="5a4e12d8-bc82-4462-9db2-07479684a3bc" class="">
+</p><h2 id="d5170e1b-ef6c-448d-910f-cdbac8927221" class="">元素列表</h2><p id="78a1a527-87c0-4496-aca9-4bddf5c40e45" class="">
+</p><p id="5269f76c-e727-43f9-a02c-f7922b34d63b" class=""><code><strong>&lt;!-- … --&gt;</strong></code><strong> 注释</strong></p><p id="f881f96a-3db8-4b63-8e38-ce3d4e3b68f4" class=""><strong><code>&lt;br&gt;</code></strong><strong> 回车</strong></p><p id="1b2c378f-96c5-4baf-b5da-cb6fb1ba3843" class=""><code><strong>&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt;</strong></code><strong> 标题</strong></p><p id="6c1d2a26-67d3-4e1f-8205-6f551d51986c" class=""><code><strong>&lt;p&gt;</strong></code><strong> 段落</strong></p><p id="dc655161-9a4b-4713-8e08-250413cb911f" class=""><strong><code>&lt;q&gt;</code></strong> (内联元素)  <strong><code>&lt;blockquote&gt;</code></strong> (块元素)  <strong>引用</strong> </p><p id="e222779c-35fe-4ede-bfb3-92574f84e6f5" class="">
+</p><p id="65710efe-75b3-45fe-b488-6c9cc6cd049f" class=""><strong><code>&lt;a&gt;</code></strong><strong> 超链接</strong><div class="indented"><p id="60abd50f-14cb-4235-b8a4-a54737136c5c" class=""><code>href</code> 属性（超文本引用 <span style="border-bottom:0.05em solid">h</span>yper text <span style="border-bottom:0.05em solid">ref</span>erence）：各类资源 <a href="HTML%201a1e17a78372468c9ad9663404163fa4/URL%20%E8%AF%B4%E6%98%8E%20e65d894992094509bd238b40a7d5c535.html">URL 地址</a><div class="indented"><p id="0a4c0d00-b69c-4d39-8be1-27b4ecce5fe8" class="">可以使用 <code>#</code> 直接链接到页面中有 <code>id</code> 属性 的 元素，格式为 <code>页面文件URL#id</code> (”www.xxxx.com/xx/index.html#id”) 或 <code>页面目录URL/#id</code> (”www.xxxx.com/xx/#id”)</p></div></p><p id="cf0b53a0-c63c-4de5-9f0c-f7f41f6d7001" class=""><code>target</code> 属性：指定<span style="border-bottom:0.05em solid">打开链接资源的 浏览器窗口/标签页 名称</span><div class="indented"><p id="1bc1408c-c947-4627-8bb7-1b3a2ed00fce" class="">默认 → 始终在本页打开资源</p><p id="57947441-a5fc-46fe-925e-42102d8c0781" class="">“_blank” → 始终打开新的窗口/标签页</p><p id="fe98a2b0-bcd9-417d-8182-96651e8ebc3e" class="">“自定义命名” → 有相同目标名的链接将会在同一个窗口/标签页打开</p></div></p><p id="39b5f57c-f351-48b2-9108-578d32b1dd0e" class="">元素内容即隐性规定了链接点击范围</p></div></p><p id="1820c52c-b2c1-4b94-995c-477ea86089e0" class="">
+</p><p id="bfc06ac5-1a8d-4b38-a4d7-8a83ad810a25" class=""><strong><code>&lt;img&gt;</code></strong><strong> 图像</strong><div class="indented"><p id="97afc424-466d-4c00-808f-34e52d7951ce" class=""><code>src</code> 属性：图片 <a href="HTML%201a1e17a78372468c9ad9663404163fa4/URL%20%E8%AF%B4%E6%98%8E%20e65d894992094509bd238b40a7d5c535.html">URL 地址</a>（放置网页地址无法显示图片，点击也无法实现跳转）</p><p id="c3bd019b-956f-4a00-8f43-f40b627cf5d1" class=""><code>alt</code> 属性：图片加载失败时，显示的对图片的文本描述；视障人士辅助</p><p id="eb9dc41c-9a08-4e62-a00e-9389fea6c3eb" class=""><code>width</code> <code>height</code> 属性：指定图片的宽高像素，用于浏览器提前建立页面布局结构</p><p id="c0afc1e9-8380-4110-8f29-563724dba48e" class="">图像获取和解析流程：<div class="indented"><ol type="1" id="199ea63b-c24e-4758-a45f-82040cd47f75" class="numbered-list" start="1"><li>浏览器首先根据URL向对应服务器请求页面html，服务器响应html</li></ol><ol type="1" id="1edf66e2-2ac2-4e43-9185-de2afd7091e1" class="numbered-list" start="2"><li>浏览器解析html获得页面中的图像URL，向对应服务器同时请求多个图像资源</li></ol><ol type="1" id="6519cda7-a6ea-4307-a5bb-4b95cd20961a" class="numbered-list" start="3"><li>获取具体图像资源前，如果html中图像指定了width和height，则浏览器可以提前建立页面布局结构，若未指定，则获得图像后浏览器需根据图像实际大小重新调整页面布局</li></ol><ol type="1" id="326c94d9-77f1-43da-9673-52676e5dfd23" class="numbered-list" start="4"><li>获得具体图像资源后，浏览器将根据width和height属性 或 浏览器中设置了”自动调整图像大小”选项 重新调整大小（注意此时已按照服务器端的图像实际大小下载到本地）</li></ol></div></p><p id="97355e38-9786-49ef-986c-0cce4db1e6a7" class="">图像格式：<div class="indented"><ul id="c92ddac8-1512-4661-915f-dcbd36686a23" class="bulleted-list"><li style="list-style-type:disc">JPEG：适合照片和复杂图像（1600万色）；有损；文件小（此外还可以调整图片质量进一步控制文件大小）；</li></ul><ul id="963c30c5-2a81-46e9-a86f-2037b50198eb" class="bulleted-list"><li style="list-style-type:disc">PNG：适合LOGO/单色/几何（PNG-24 百万色，PNG-16 千色，PNG-8 256色）；支持透明；无损；文件大小取决于颜色数（相同颜色数PNG的压缩要优于GIF）；</li></ul><ul id="f4c39ef5-54e9-4be0-b5af-e391a62d6e4a" class="bulleted-list"><li style="list-style-type:disc">GIF：适合动画（256色）；半支持透明；无损；支持动画；文件大；</li></ul></div></p></div></p><p id="6e76b47f-1889-44af-a387-4971efd79345" class="">
+</p><p id="30efbec6-28c4-4b36-8e5b-0957131709a3" class=""><strong><code>&lt;ol&gt;</code></strong> (ordered list)  <strong><code>&lt;ul&gt;</code></strong> (unordered list)  <strong><code>&lt;li&gt;</code></strong> (list item)  <strong><code>&lt;dl&gt;</code></strong><strong> </strong><strong><code>&lt;dt&gt;</code></strong><strong> </strong><strong><code>&lt;dd&gt;</code></strong>   <strong>列表</strong><div class="indented"><p id="b1fc2958-2ce7-4dce-af2d-e33a530efcc8" class="">有序/无序列表<div class="indented"><p id="d009ca99-43b4-4d81-bccb-f124c6caaf7c" class=""><code>&lt;ol&gt;</code> 或 <code>&lt;ul&gt;</code> 
+    <code>&lt;li&gt;</code> <code>&lt;/li&gt;</code> …若干个…
+<code>&lt;/ol&gt;</code> 或 <code>&lt;/ul&gt;</code> </p></div></p><p id="ce6b2a93-b248-460f-a9b1-d61efb443e6b" class="">定义列表<div class="indented"><p id="bff9cdcc-6d09-443e-b13b-81e5eae00469" class=""><code>&lt;dl&gt;</code> 
+    <code>&lt;dt&gt;</code> 术语 <code>&lt;/dt&gt;</code> <code>&lt;dd&gt;</code> 描述 <code>&lt;/dd&gt;</code>
+<code>&lt;/dl&gt;</code>   </p></div></p><p id="214c653d-bb3d-467c-8261-2d9fac23fa05" class="">列表可以嵌套</p></div></p><p id="6df0e05f-6e79-48f0-94a7-141b5b0d4a7e" class="">
+</p><p id="d926a997-878b-4b50-9cd0-ff8fcf52c44b" class="">
+</p><h1 id="f72989ff-9be8-425c-90b1-3a8a11d32607" class="">Web 相关知识</h1><p id="8f4076b4-67d9-4506-9b1c-50f3eb2f3de4" class="">
+</p><figure id="e65d8949-9209-4509-bd23-8b40a7d5c535" class="link-to-page"><a href="HTML%201a1e17a78372468c9ad9663404163fa4/URL%20%E8%AF%B4%E6%98%8E%20e65d894992094509bd238b40a7d5c535.html">URL 说明</a></figure><p id="2da10270-3572-40e6-ab72-c0d6b2827322" class="">
+</p><p id="730fd1b7-6228-4889-bd6a-76174ff72b99" class=""><strong>域名</strong><div class="indented"><p id="80393d8f-0d02-4fed-8e5b-1ac5123a6162" class="">ICANN机构管理
+    -&gt;  二级代理商</p><p id="0651b795-d66e-46ff-9b58-b07839c2d02f" class="">域名 vs 网站名<div class="indented"><p id="c1c6c3f0-5d4d-4411-9371-bf78bba55976" class="">域名租用通常为 <code>一级域名.顶级域名</code> <mark class="highlight-gray">”anji.com”</mark>，域名所有者可以在左侧无限扩展二级及以上的域名，来作为网站名，如： <code>二级域名.一级域名.顶级域名</code> <mark class="highlight-gray">”popping.anji.com”</mark></p><p id="09b69c19-e328-4b92-af7b-ea671cdc5ea4" class=""><mark class="highlight-red_background">www作为二级域名的特殊性？</mark></p><p id="273e0369-c2aa-4648-8436-9e6c9e2c9ba1" class=""><mark class="highlight-red_background">其他二级域名的解析方式？由域名所在服务器进行解析 or DNS服务器进行解析？</mark></p></div></p></div></p><p id="1ef2957d-f8cb-4e17-9b3c-e841469aabd5" class="">
+</p><p id="a307b98a-fb58-4d65-a037-5542181a404f" class=""><strong>HTTP协议</strong><div class="indented"><p id="81a8a9aa-a513-4f5f-8b0d-b1af4953bf8e" class="">请求 + 响应</p><p id="3ab0c8ed-6843-41bc-86be-af976c49b773" class="">
+</p></div></p><p id="57dc4c64-33a9-443d-b81a-a52aa725ac10" class=""><strong>File协议</strong><div class="indented"><p id="ddd8b55f-ee97-41fe-8e9f-712a646d95f5" class="">从计算机本地读取文件的协议</p></div></p><p id="197dcaca-b689-4372-9def-384fb2e306bc" class="">
+</p><p id="62599383-6aad-497a-b28f-9e0e59a7642f" class=""><strong>默认页面</strong><div class="indented"><p id="9160cb31-5cab-463c-9260-07afaec44835" class="">URL地址为一个服务器端的目录时，服务器收到请求，会从目录中寻找到默认页面并返回</p><p id="c7a353f9-20cf-4fa3-a635-fa835017785c" class="">不同<span style="border-bottom:0.05em solid">Web服务器</span>规定了不同的<span style="border-bottom:0.05em solid">默认页面文件名称</span>，如 “index.html” ”default.htm” “index.php”<div class="indented"><p id="9043e444-fd53-49a1-944b-2521b8b78a37" class="">因此，将网站发布给他人时，最好只提供主页目录的URL（e.g. “www.baidu.com”），而非精确到具体默认页面名称（e.g. “www.baidu.com/index.html“），因为部署的服务器可能发生更换，相应的默认页面名称也需要随之变化，原来发布的带页面名称的URL就会失效</p></div></p></div></p><p id="b0418c71-3607-4d0a-9beb-9cc03d9029a4" class="">
+</p><h1 id="ea1f09e5-dcc7-42b1-81e8-6251baa485c0" class="">CSS</h1><figure id="89353096-2db5-4431-b1fd-ac875e446317" class="link-to-page"><a href="HTML%201a1e17a78372468c9ad9663404163fa4/CSS%20893530962db54431b1fdac875e446317.html">CSS</a></figure></div></article></body></html>

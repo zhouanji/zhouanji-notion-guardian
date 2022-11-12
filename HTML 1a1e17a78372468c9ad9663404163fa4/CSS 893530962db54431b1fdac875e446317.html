@@ -1,0 +1,701 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CSS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="89353096-2db5-4431-b1fd-ac875e446317" class="page sans"><header><h1 class="page-title">CSS</h1></header><div class="page-body"><nav id="0bc44cca-0d35-4f26-8d51-745258a49968" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#de50c4f1-5f83-40c1-a663-312695c73d6f">CSS 概述</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b0d93d1f-8b1c-48ef-8979-d34dae4254ab"><strong>代码模板</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#87a103cd-99c9-4d91-a0a9-31bcfc46ae5d"><strong>外部样式表</strong>（.css）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c4841364-2c8e-4ec7-b380-4288d04fd930"><strong>混合样式表</strong>（一个HTML同时使用多个CSS）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ba363d05-72a4-471a-98fb-df67c3b79121"><strong>规则</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f47d9e08-d4d1-4f13-864b-4143c595b903"><strong>选择器</strong>（元素实例的集合）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f68f36e8-cc42-4b29-afda-bbd344c715bb"><strong>浏览器对某个特定元素特定属性 CSS 规则的解析流程</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#eeebcb3d-3b6d-4806-bc21-f083842e4353"><strong>规则缩写</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0a156422-1af9-4103-afe7-4bec9c000189">盒模型</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8194497c-bcdf-4f51-a247-42150b476ae4">内容区（content area）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#222e628a-79fc-42b8-b29d-5d98bc9d0eb2">边框（border）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b7d62769-8df9-43da-8fc2-a78ec30494d8">内边距（padding）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#897cf6fa-f8c8-44fe-8ae6-8fdf1fdb0589">外边距（margin）</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#27d00118-44d3-4c6a-a6e4-5efc14a982e4">背景颜色 &amp; 背景图像</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#604fe3c2-3565-4601-8e34-237d225613dc">&lt;div&gt; 与 &lt;span&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9416b141-0e04-458d-b1ba-926f21509b6c">&lt;div&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#66a12128-2403-45e5-b1d4-6c2a7f07e599">&lt;span&gt;</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#569fc1c2-87a3-4bba-84e0-de95c4f424ef">文本</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8c25fa3c-3fc2-4f7a-b0c4-5e8b6703dd31">字体属性 <code>font-family</code> </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#eb041ada-e8cf-4226-bba0-457242d2011f">大小属性 <code>font-size</code> </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#867db57b-a6eb-4aef-a563-61b4b009aab2">风格样式类属性</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bcaa0a5b-0dbc-43bc-ac3f-359db8811100">颜色</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ebeac13c-dd9b-447b-8670-53438e62496d">布局</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#40ec9bab-3d97-486a-8e07-6a696035d61a">内容对齐属性 <code>text-align</code> </a></div></nav><h1 id="de50c4f1-5f83-40c1-a663-312695c73d6f" class="">CSS 概述</h1><h3 id="b0d93d1f-8b1c-48ef-8979-d34dae4254ab" class=""><strong>代码模板</strong></h3><pre id="135cc273-d06c-489d-8d28-461b81a1b1d4" class="code"><code>@font-face {                                 /* CSS内置规则：新建字体 */
+	font-family: &quot;xxxx&quot;;
+	src: url(&quot;http://xxxx1.woff&quot;),
+			 url(&quot;http://xxxx2.ttf&quot;);
+}
+@import {                                    /* CSS内置规则：导入其他CSS文件 */
+}
+@media {                                     /* CSS内置规则：创建特定媒体类型的CSS规则 */
+}
+
+选择器 {                    /* 一条规则 */
+	属性名 : 属性值 ;
+	... ...
+}
+
+... ...                     /* 其他规则 */</code></pre><h3 id="87a103cd-99c9-4d91-a0a9-31bcfc46ae5d" class=""><strong>外部样式表</strong>（.css）</h3><p id="e73592d9-e46d-4aee-90cc-17a077c0f940" class="">将 CSS 样式单独提出来作为一个独立文件，可以方便不同页面复用相同的样式规则</p><p id="c00a43c4-6cbd-4fe8-9d3d-45e60dab4dbd" class="">W3C 验证工具（CSS标准）：http://jigsaw.w3.org/css-validator/</p><h3 id="c4841364-2c8e-4ec7-b380-4288d04fd930" class=""><strong>混合样式表</strong>（一个HTML同时使用多个CSS）</h3><p id="8ad3eb68-b297-4703-96ab-088733b07fc5" class="">用途 1：样式表之间为串联关系（引入顺序靠后的样式表覆盖靠前的冲突规则），由粗粒度样式表到细粒度样式表，方便同一站点的多个子页面进行复用，实现在保持相似主题的基础上进行个性化调整<div class="indented"><p id="d6376ecd-2dd2-469a-babe-577355011808" class=""><mark class="highlight-gray">&lt;link … href=”基础样式.css” …&gt;
+&lt;link … href=”个性化样式.css” …&gt;
+&lt;link … href=”细粒度调整.css” …&gt;</mark></p></div></p><p id="1a904bd2-f78d-4ebe-a060-3b9317d6460a" class="">用途 2：样式表之间为并联关系（浏览器使用媒体查询选择其中一套样式规则进行使用），旨在面向不同设备提供不同的样式规则<div class="indented"><p id="10c97763-20c4-441c-8d00-29c4cf59c7c1" class="">实现方式 A：在 <span style="border-bottom:0.05em solid">HTML 文件</span> 中引入面向不同设备的多个 CSS 文件，并分别在 &lt;link&gt; 标签中使用 media 属性 增加媒体查询，浏览器将通过媒体查询选择其中的一个 CSS 文件进行加载：<div class="indented"><p id="833bec71-9865-4aeb-9765-0bcdc2267845" class=""><mark class="highlight-gray">&lt;link … href=”PC端样式.css” … media=“aaaa”&gt;
+&lt;link … href=”移动端样式.css” … media=”bbbb”&gt;
+&lt;link … href=”打印机样式.css” … media=”cccc”&gt;</mark></p></div></p><p id="3391b5af-5331-42d6-9845-b8132f27d664" class="">实现方式 B：在一个 <span style="border-bottom:0.05em solid">CSS 文件</span> 中创建面向不同设备的多组规则，并使用 @media 标记，浏览器通过媒体查询在标记 @media 的规则中选择一组加载，并加载所有其他普通规则：<div class="indented"><p id="58479cff-ccc4-4f5e-8940-216c82cf3127" class=""><mark class="highlight-gray">@media aaaa { 面向 满足aaaa设备 的规则集合, … … }
+@media bbbb { 面向 满足bbbb设备 的规则集合, … … }
+@media cccc { 面向 满足cccc设备 的规则集合, … … }
+其他普通规则                                                /* 普通规则适用于所有设备 */</mark></p></div></p><p id="48034b0f-d231-4e8f-8e00-947feb7e2c28" class="">媒体查询 的 可选属性值：参考 http://www.w3.org/TR/css3-mediaqueries/</p></div></p><h3 id="ba363d05-72a4-471a-98fb-df67c3b79121" class=""><strong>规则</strong></h3><p id="314756d5-759a-4cc9-a300-aad8a91c2a5f" class="">将 <span style="border-bottom:0.05em solid">不同元素的相同样式（属性+值）</span> 归在一起，编写为一条规则</p><p id="a83b564d-d492-49fa-afc8-20d1432bae21" class="">其中元素如有对其他属性的额外样式需求，则单独编写规则</p><h3 id="f47d9e08-d4d1-4f13-864b-4143c595b903" class=""><strong>选择器</strong>（元素实例的集合）</h3><p id="64d35cc1-985e-4d91-8e7c-c1555bac2f5a" class="">示例代码<div class="indented"><p id="6850751e-e080-4771-bfe7-825625f8957f" class="">选择单个元素： <code>h1</code> </p><p id="c8138f58-6751-4892-b8c9-7e0ff26a43f4" class="">选择多个元素： <code>h1, h2</code> </p><p id="036b232e-7356-4330-9507-874011b0e51d" class="">选择某个类中的某个元素： <code>h1.classname</code> </p><p id="024e9fb6-c057-4ec9-802e-1ca1b7675061" class="">选择某个类中的所有元素： <code>.classname</code> </p><p id="84f473e8-6f66-4c2e-8482-ba5bbff9b977" class="">选择某个 id 类型不限的元素： <code>#idname</code> </p><p id="52423269-c657-4e3c-a42a-dfaa8fbd793b" class="">选择某个 id 特定类型的元素： <code>h1#idname</code> </p><p id="d4f4d820-000f-421b-a778-c5864bef2532" class="">迭代选择子孙元素： <code>父元素 子孙元素</code>  （迭代选择父元素节点下的所有匹配的子孙元素）</p><p id="4fff14f3-eaca-4a1b-9844-c9aaf4b41245" class="">直接选择孩子元素： <code>父元素&gt;孩子元素</code>  （选择父元素节点的直接孩子中匹配的孩子元素）</p><p id="7c94d665-edeb-4597-a60d-e594a25240f5" class="">按多层路径限制选择子孙元素： <code>父元素 子元素 孙元素</code>  （选择父节点的某子节点的孙节点）</p><p id="fc2e5474-fa67-4f53-9ad2-2bf0ac6577de" class="">伪类（元素状态）： <code>a:visited</code> </p></div></p><p id="84084fed-cb25-4643-9dbd-85aafb02b83b" class="">继承<div class="indented"><p id="74a293f6-96bf-47eb-b828-a8e78c54534f" class="">选择器中列出的元素包含的子孙元素节点继承该规则</p><p id="94259f6d-4810-4cc9-bc87-de9c1c30ad38" class="">有些属性可以继承，有些属性无法继承</p></div></p><p id="c6da47e4-bccc-41f2-92af-b0bc2c499361" class="">覆盖 / 冲突<div class="indented"><p id="a29462ea-079b-4d79-9353-42356b3b257f" class="">相同元素 的 相同属性 规则存在多条，哪条规则生效？<div class="indented"><p id="52c341c9-45ec-4ec1-a62e-acfbf28a26e4" class=""><a href="CSS%20893530962db54431b1fdac875e446317.html">浏览器对某个特定元素特定属性 CSS 规则的解析流程</a> </p></div></p><p id="9d61aa9d-d459-4d6d-b4f1-bbb2f72d898a" class="">一条规则 内部 存在冲突属性，哪条属性样式生效？<div class="indented"><p id="318a5647-d7c9-493f-9c93-756e550658b2" class="">顺序靠后的样式生效</p></div></p></div></p><p id="458c9084-00b3-467d-ab52-facf3b099f44" class="">伪类<div class="indented"><p id="06cdc678-0a1f-4859-9f63-01eadb838a63" class="">元素可能拥有不同 <span style="border-bottom:0.05em solid">状态</span>（未访问 <code>link</code> / 已访问 <code>visited</code> / 鼠标悬浮 <code>hover</code> / 焦点 <code>focus</code> / 活动 <code>active</code> 等等），每个状态为一个伪类，可以对伪类指定 CSS 样式，浏览器会检查不同状态的元素并将其放入不同的伪类，从而应用不同伪类的 CSS 样式</p><p id="b95255a2-c79d-40a2-a741-4d93d7128e32" class="">元素可能同时处于多种状态，所以 <span style="border-bottom:0.05em solid">伪类规则的顺序</span> 很重要：<div class="indented"><p id="ffb106d5-5bc1-49bf-a62f-5227aad8b634" class="">e.g. <code>&lt;a&gt;</code> 可能同时处于 已访问 &amp; 悬浮，所以伪类规则的顺序最好为 link, visited, hover, focus, active，来保持不同状态间显示样式的优先级</p></div></p></div></p><h3 id="f68f36e8-cc42-4b29-afda-bbd344c715bb" class=""><strong>浏览器对某个特定元素特定属性 CSS 规则的解析流程</strong></h3><ol type="1" id="1e11c7a6-3a9f-48dc-a859-7332d1fa166b" class="numbered-list" start="1"><li>收集所有样式表：Web页面作者的样式表、用户自行配置的样式表（部分浏览器允许用户定义自己的样式表）、浏览器的默认样式表</li></ol><ol type="1" id="0195448d-55d4-4679-96e3-14b6e4cac560" class="numbered-list" start="2"><li>遍历选择器和页面结构，找到该元素对应属性的所有规则</li></ol><ol type="1" id="8987d785-9d61-4022-8e8a-51fe0406f749" class="numbered-list" start="3"><li><mark class="highlight-yellow_background">优先级原则一：页面作者 → 用户 → 浏览器</mark><p id="94f50e41-4aab-481a-a8a8-9c416f26aef5" class="">读者如果一定要覆盖页面作者的样式，可以在规则末尾添加 <code>!important</code> 标记，例如：
+<mark class="highlight-gray">font-size: 200%    !important;</mark></p></li></ol><ol type="1" id="98754eb1-de81-49aa-ad2d-9d0a5350c5df" class="numbered-list" start="4"><li><mark class="highlight-yellow_background">优先级原则二：特定性越高，优先级越高</mark><p id="7d6174a1-37d9-4626-92fb-a4c70d22ff33" class=""><em>选择器的特定性计算公式：  </em><span style="border-bottom:0.05em solid"><em>特定性 = id数量 x 100 + 类或伪类数量 x 10 + 元素数量 x 1</em></span></p><p id="3b4daf18-3e57-4be3-ac3e-46aa765feab0" class="">选择器中逗号分隔部分视为不同的规则，分别计算特定性（例如 <code>h1, h2</code> 视为两条规则 ）</p></li></ol><ol type="1" id="6c922fff-fae4-4541-999a-7eda772a9e56" class="numbered-list" start="5"><li><mark class="highlight-yellow_background">优先级原则三：样式表中越靠后的规则，优先级越高</mark><p id="b3d8f040-455a-4c10-8a70-9944c00ec48f" class="">若 HTML 引入了多个 CSS 文件，则不同 CSS 中的规则顺序以 HTML 的引用顺序为准</p></li></ol><h3 id="eeebcb3d-3b6d-4806-bc21-f083842e4353" class=""><strong>规则缩写</strong></h3><p id="63d4710f-0725-4a43-8ff1-3aed479d15b6" class="">针对某个特定对象（background / font / margin / border 等）的不同维度的属性（即使用横线 - 分隔的属性）可以合并为一条规则进行缩写：<div class="indented"><p id="1fb9f70b-8f0f-48e2-aec5-a58526fbd8ad" class="">由 属性值 可以区分 属性维度 的，属性值顺序任意<div class="indented"><p id="8823f3c2-ad7a-424c-84da-10e0d2532eca" class=""><mark class="highlight-gray">xx-width: thin;
+xx-style: solid;                   — 缩写 —&gt;                xx: solid thin #007e7e;
+xx-color: #007e7e;</mark></p></div></p><p id="47a17386-c5e7-4558-b74a-19da8c3539bd" class="">由 属性值 无法区分 属性维度 的，属性值顺序固定<div class="indented"><p id="cd11775f-1cef-47df-aea1-d1e6bea1b359" class=""><mark class="highlight-gray">padding-top: 0px;
+padding-right: 20px;        — 缩写 —&gt;                padding: 0px 20px 10px 30px;
+padding-bottom: 10px;
+padding-left: 30px;</mark></p></div></p><p id="71945c09-5968-4d5c-a26d-eac074a95b60" class="">字体规则的缩写<div class="indented"><p id="e13805f9-9bbf-4477-8ab4-b852efdfc14a" class=""><mark class="highlight-gray">font: [font-style] [font-variant] [font-weight] font-size[/line-height] font-family;</mark></p></div></p></div></p><h1 id="0a156422-1af9-4103-afe7-4bec9c000189" class="">盒模型</h1><p id="34b088a0-fac1-4d62-9f12-76683839df6d" class="">盒模型是CSS看待元素的方式：CSS将 <span style="border-bottom:0.05em solid">每个元素（包括内联元素）</span> 都视为一个盒子</p><figure id="2115ec62-d68e-4a6c-9bd3-b959666f55e5" class="image"><a href="CSS%20893530962db54431b1fdac875e446317/%25E7%259B%2592%25E6%25A8%25A1%25E5%259E%258B.jpg"><img style="width:480px" src="CSS%20893530962db54431b1fdac875e446317/%25E7%259B%2592%25E6%25A8%25A1%25E5%259E%258B.jpg"/></a></figure><h3 id="8194497c-bcdf-4f51-a247-42150b476ae4" class="">内容区（content area）</h3><p id="567a51d4-e3fe-4a19-9287-5ee76ffad522" class="">内容区：    元素的内容（文本或图像），盒子大小正好能包含所有内容</p><p id="233d370e-f6a9-4be1-a050-81064a0d3f61" class="">宽度 <code>width</code>  默认值 auto 占满整个浏览器宽度； 百分数 相对元素所在容器宽度(&lt;div&gt;&lt;body&gt;等)</p><p id="c7bd4a84-cf13-4e49-881e-c8279dd41ea0" class="">高度 <code>height</code> 通常不修改！默认值 auto 将按内容多少自动调整高度，指定高度不足内容将会溢出</p><h3 id="222e628a-79fc-42b8-b29d-5d98bc9d0eb2" class="">边框（border）</h3><p id="fc018d2a-3839-41f3-a7d9-c1fb73fcf99e" class="">边框：        内边距外框边线，边框内部都可以认为是元素本身</p><p id="f82da709-16b7-4ba5-8827-5bf852e97302" class="">样式 <code>border-style</code>  solid  double  groove  ouset  inset  dashed  dotted  ridge</p><p id="865dfd9b-0ede-45c9-b2a5-f8bebfe9b31b" class="">宽度 <code>border-width</code>  thin  medium  thick  像素值</p><p id="cdd69501-f51a-4100-8499-d70184196edd" class="">颜色 <code>border-color</code>  属性值见下文颜色章节编码</p><p id="f50bf491-c3c7-4b95-a157-bee4760e54eb" class="">某侧 <code>border-边位置-属性</code> 如 <code>border-top-color</code> <code>border-left-style</code> 等等</p><p id="b0273c9c-6818-4ec7-a836-91cb320dab70" class="">圆角 <code>border-角位置-radius</code> 如 <code>border-top-left-radius</code> <code>border-bottom-right-radius</code> 等等</p><div id="680c555b-543c-4f3c-9a93-3940854483ee" class="column-list"><div id="8dae933a-bbab-4a35-aacf-199c3b187ff2" style="width:50%" class="column"><h3 id="b7d62769-8df9-43da-8fc2-a78ec30494d8" class="">内边距（padding）</h3><p id="f8583ca5-517e-4996-902c-38cc60c65265" class="">透明，旨在为元素内容周围增加额外空间</p></div><div id="30d3c1b7-feac-4c3d-830e-a6bf79572218" style="width:50%" class="column"><h3 id="897cf6fa-f8c8-44fe-8ae6-8fdf1fdb0589" class="">外边距（margin）</h3><p id="1f15b07e-1d5f-4e1e-9c69-cf0222c5fe2a" class="">透明，旨在提供元素之间的额外空间</p></div></div><p id="bfabf6ad-f98a-4cca-93ac-9039e59ffbf4" class=""><code>padding</code> / <code>margin</code> 指定四周边距宽度      <code>padding-left</code> <code>margin-right</code> 等 指定单独某侧边距宽度<div class="indented"><p id="79800916-1031-4abc-b67c-244532030300" class="">注意属性样式顺序：通常先整体指定四周宽度，后特殊指定某侧宽度进行覆盖<div class="indented"><p id="7287bc4a-192c-41b2-938b-04bc6a29f7d1" class=""><mark class="highlight-gray">padding:            25px;
+padding-left:     80px;</mark></p></div></p></div></p><p id="a4846629-48d0-410d-9ead-7b635b76c73a" class="">内边距 &amp; 外边距 只能修改四周大小，不能修改样式</p><p id="8470a68e-4945-40f7-8127-cfe675e142e2" class="">元素的 背景颜色 &amp; 背景图片 会延申到 内边距，不延申到 外边距</p><h3 id="27d00118-44d3-4c6a-a6e4-5efc14a982e4" class="">背景颜色 &amp; 背景图像</h3><p id="76e53e19-d373-4243-b993-00f1d22ec1b4" class="">背景颜色 <code>background-color</code> </p><p id="17bea926-1081-4bea-aa40-01f0b7a8b0be" class="">背景图像 <code>background-image</code>  属性值格式为 url(xxxx/xx/x.x)<div class="indented"><p id="f73e938e-62f3-46d5-be5d-da732f83fb4f" class="">图像重复 <code>background-repeat</code>  属性值 no-repeat(不) repeat-x(x轴) repeat-y(y轴) inherit(继承)</p><p id="645d455e-f5e9-470c-ba23-685fd433c159" class="">图像位置 <code>background-position</code>  属性值 top bottom left right center 等等</p></div></p><p id="f393310a-98cb-4ace-ab98-da22fa1537a2" class="">二者会在最底图层覆盖 内容区 + 内边距，不覆盖 外边距</p><h1 id="604fe3c2-3565-4601-8e34-237d225613dc" class="">&lt;div&gt; 与 &lt;span&gt;</h1><p id="c77ac0a7-3f05-4729-9fc9-293c7c1f79b8" class="">二者均用于对元素进行逻辑划分，均可以嵌套使用</p><p id="5e6405db-e077-49ae-8814-e40de5cf0212" class="">可以设置 <code>id</code> 和 <code>class</code> 属性并应用于 CSS 选择器</p><p id="a31ccc32-4d8a-4dc9-aa89-98c92312461c" class="">对 <code>&lt;div&gt;</code> 或 <code>&lt;span&gt;</code> 指定的规则中，有些属性可以向下继承，有些属性不可以向下继承 </p><div id="f6ee3626-b66a-471c-b3d5-4f40e71de063" class="column-list"><div id="e228ef8c-d467-445c-89c3-1d997fe2cb12" style="width:50%" class="column"><h3 id="9416b141-0e04-458d-b1ba-926f21509b6c" class="">&lt;div&gt;</h3><p id="6739b6fe-3d6c-4d98-99c4-b063c3c52756" class="">对 块元素 进行逻辑划分</p></div><div id="caf85a8e-06db-456c-8260-3c8b7a2dab4c" style="width:50%" class="column"><h3 id="66a12128-2403-45e5-b1d4-6c2a7f07e599" class="">&lt;span&gt;</h3><p id="3fc82764-febf-455a-8052-e4972a5bf405" class="">对 内联元素 进行逻辑划分</p></div></div><h1 id="569fc1c2-87a3-4bba-84e0-de95c4f424ef" class="">文本</h1><h3 id="8c25fa3c-3fc2-4f7a-b0c4-5e8b6703dd31" class="">字体属性 <code>font-family</code> </h3><p id="97044bdc-c753-4610-a7bd-57b5009c69e9" class=""><strong>属性值    </strong><div class="indented"><p id="bb3f22cc-26f1-45a6-bc68-57109ede1e41" class="">值域：    字体名 or 字体系列名（字体系列：每个字体系列都包含大量字体）</p><p id="e690d8c7-0b09-4555-8fb0-1ce848dd43ce" class="">示例：    <code>font-family: 字体1, 字体2, 字体3, 字体4, …, 字体系列;</code> </p><p id="df86bd80-bf91-40f3-8e2c-18c38d0265aa" class="">候选字体列表（即属性值）：    <div class="indented"><p id="01eaf27a-19f1-428f-bbd4-48bb37378a19" class="">每个浏览器和操作系统自带的字体库不同，浏览器将按顺序逐一尝试属性值中各个字体直至找到支持的字体，故通常前面几个字体根据显示效果优先级排序，并尽量覆盖到多种操作系统和浏览器，最后一个位置放置通用字体系列来保底</p><p id="154714f2-61ac-4476-95b6-8115d54ee82b" class="">通常属性值（即候选字体列表）都来自同一个字体系列</p><p id="6aef9eaa-2faf-44b6-8519-547ea885dc20" class="">字体名区分大小写！</p></div></p><p id="6504dedc-8155-4cd8-b4a8-aa7877772b1d" class="">英文字体系列：<div class="indented"><ul id="cddc33c4-3404-4c53-93ab-e73d9dc3ef71" class="bulleted-list"><li style="list-style-type:disc">Sans-serif 无衬线</li></ul><ul id="b1e1f221-3a65-483a-bcc7-d277957ec7a8" class="bulleted-list"><li style="list-style-type:disc">Serif 有衬线</li></ul><ul id="5f875c37-5f05-43a1-936d-0ac1a29f3c72" class="bulleted-list"><li style="list-style-type:disc">Monospace 等宽字符</li></ul><ul id="e1ce33d2-1af5-450c-80a4-9ebe75402591" class="bulleted-list"><li style="list-style-type:disc">Cursive 手写</li></ul><ul id="49510531-99bb-41dc-a260-e697e6a28344" class="bulleted-list"><li style="list-style-type:disc">Fantasy 趣味</li></ul></div></p></div></p><p id="19f0a6c3-cf49-43ea-9ea1-93cf1ef3a0d6" class=""><strong>引入 Web 字体</strong>    <div class="indented"><p id="a1a5f384-03b7-4274-bd8f-6ec2addb9d31" class="">字体引入流程：<div class="indented"><ol type="1" id="17806c80-5e96-437f-9bba-3bf23560acc2" class="numbered-list" start="1"><li>寻找字体资源，并下载字体的不同文件格式（不同浏览器支持不同字体文件格式）</li></ol><ol type="1" id="cd9ddc80-c3a9-4e5d-9b8a-2b7d146b3d32" class="numbered-list" start="2"><li>将所有格式的字体文件放在用户能访问到的某台服务器上，记录URL</li></ol><ol type="1" id="f02da49f-e4bb-43e2-b634-f9d9e0c0d6f6" class="numbered-list" start="3"><li>使用CSS内置规则 <code>@font-face</code> 来在 .css 文件中引入：给字体命名 并 提供字体文件URL</li></ol><ol type="1" id="5fda37f3-1e62-4928-bd9b-4687adf5867c" class="numbered-list" start="4"><li>在 .css 文件中 添加 CSS 样式规则： <code>font-family</code> 属性值</li></ol></div></p><p id="d0286884-f021-4edf-92cd-afb68f725b4b" class="">用户访问页面时浏览器的处理过程：<div class="indented"><ol type="1" id="340db146-0669-4599-9e9b-8d251c8a9a29" class="numbered-list" start="1"><li>浏览器向服务器请求 HTML 和 CSS 文件</li></ol><ol type="1" id="99012e2b-e716-4e53-bcad-9ac53ad04e01" class="numbered-list" start="2"><li>浏览器发现页面引入了 Web 字体，按顺序尝试 src 中各个URL的字体文件格式，并向服务器请求对应字体文件进行加载</li></ol></div></p><p id="e538f53d-f843-4288-a1ac-4bbd2bc8df87" class="">缺点：<div class="indented"><ul id="4ee49dcc-5579-4a2d-9684-90d07de566fa" class="bulleted-list"><li style="list-style-type:disc">获取和加载 Web字体 比较耗时</li></ul><ul id="5f229d0f-87ba-498f-a49e-7bbae520af3e" class="bulleted-list"><li style="list-style-type:disc">移动设备、小型设备 并不支持 Web字体</li></ul></div></p></div></p><h3 id="eb041ada-e8cf-4226-bba0-457242d2011f" class="">大小属性 <code>font-size</code> </h3><p id="15352899-4321-440c-a382-eb4233bab167" class=""><strong>属性值</strong><div class="indented"><p id="1568270c-5027-43b0-b875-15f0fb5a00b3" class="">px：像素</p><p id="6b5a68f0-d21c-473c-9dce-5f229f0421a1" class="">%：百分比（相对父元素的字体大小）</p><p id="cf21174e-2156-46e3-8ed3-c4a0551e6923" class="">em：倍数（相对父元素的字体大小）（% 与 em 等价）</p><p id="46902672-4ebf-4eaa-a3a7-8cf6e46f6a13" class="">关键字：浏览器将关键字映射为像素值，不同浏览器的映射表不同
+               xx-small, x-small, small, medium, large, x-large, xx-large</p><p id="17b0060f-c4e7-4772-ae2b-618d1f6ca122" class=""><mark class="highlight-gray"><em>( 特殊的，对于 &lt;body&gt; 元素使用 % 或 em 定义字体大小，则为相对浏览器的默认字体大小 )</em></mark></p></div></p><p id="abc0e2dd-0e2d-46de-ba28-4936edb379f4" class=""><strong>字体大小设置的方法论</strong><div class="indented"><ol type="1" id="75acedf7-3455-4ce1-85cf-0b3f0ffa3566" class="numbered-list" start="1"><li>使用 关键字（small 或 medium） 设置 &lt;body&gt; 元素</li></ol><ol type="1" id="08665ff9-f82d-45e1-acf8-b31c5d2196df" class="numbered-list" start="2"><li>使用 em 或 % 设置 其他元素</li></ol><p id="bb5f2808-402a-4cba-9414-edf42eb73407" class="">由此，页面开发者 或 用户 可以方便地整体性地调整字体大小</p></div></p><h3 id="867db57b-a6eb-4aef-a563-61b4b009aab2" class="">风格样式类属性</h3><p id="024ee0e1-2c4a-4691-9f9e-00bfde3a1296" class=""><strong>粗细属性 </strong><strong><code>font-weight</code></strong><strong> </strong><div class="indented"><p id="334e540a-faa6-4298-92f6-2026d8a86741" class="">bold（粗体）  normal（正常）</p><p id="ce484e6f-0e86-42df-9b93-7c162e93493c" class="">bolder    lighter    （相对继承的文本样式）</p><p id="08a89cb9-3dd7-45bb-b59b-097ea7c3a64f" class="">100 的倍数           （100-900）</p></div></p><p id="94b29c0f-4bd9-4540-ae97-4db6d1d41f62" class=""><strong>行间距属性 </strong><strong><code>line-height</code></strong><strong> </strong><div class="indented"><p id="1ae8617d-6dca-40cf-888d-0629b1f70abc" class="">像素      </p><p id="c127ae54-e857-458b-8cd1-867a3fb7455b" class="">em / 百分数（<span style="border-bottom:0.05em solid">相对当前元素节点字体大小的倍数</span>，但<span style="border-bottom:0.05em solid">子孙元素将会继承这个行高的像素绝对值</span>）      </p><p id="a155bbd3-2c45-401e-8a06-9259f0014956" class="">数值            （子孙元素继承时 设置行高为 <span style="border-bottom:0.05em solid">相对子孙元素各自字体大小的倍数</span>）</p></div></p><p id="138526b8-5112-4af5-88ec-b88a950384f8" class=""><strong>风格属性 </strong><strong><code>font-style</code></strong><strong> </strong><div class="indented"><p id="b9a54faa-3a5c-4969-ac58-0c1c90f892b9" class="">italic（字体本身提供的斜体风格）  oblique（浏览器将正常文字倾斜）</p></div></p><p id="106cba96-3e60-4d71-a97d-78cd7d0db9b8" class=""><strong>装饰属性 </strong><strong><code>text-decoration</code></strong><strong> </strong><div class="indented"><p id="b6560fba-cffe-4b27-b99f-1b5d90f288aa" class="">line-through（删除线）  underline（下划线）  overline（上划线）  none（取消装饰）</p><p id="4827e417-bac9-4436-9e5b-a6c19b98054d" class=""><em>属性值用空格分隔，可以同时对文本加入多种装饰</em></p></div></p><h1 id="bcaa0a5b-0dbc-43bc-ac3f-359db8811100" class="">颜色</h1><p id="9755510a-f5f2-4b66-a03f-7ab28f0c1da1" class=""><strong>颜色编码方式</strong><div class="indented"><p id="f874fbcd-1c13-49bf-aa4d-ec84e9f229a6" class="">颜色名：                 16种基本颜色，150种扩展颜色    （颜色名不区分大小写）</p><p id="46375c3b-4e86-48dd-b8b0-59038f1be71a" class="">红绿蓝-百分比：     rgb(xx%, xx%, xx%) </p><p id="b9eb0ac3-df03-4245-b115-a56e92a75187" class="">红绿蓝-数值：         rgb(xxx, xxx, xxx)      （数值范围0-255）</p><p id="95e8aabf-a635-408e-85b0-bec9e540d004" class="">红绿蓝-十六进制： #xxxxxx                     （每两位十六进制数为一种颜色的数值）<div class="indented"><p id="15da28a4-2a07-470e-bbf1-6311f64ba84b" class="">简写规则：十六进制编码中，如果<span style="border-bottom:0.05em solid">每组分量</span>的<span style="border-bottom:0.05em solid">两位数字全部相同</span>，则可以使用简写，例如 #ccbb00 -&gt; #cb0，#ccbb10 则不能简写</p></div></p><p id="b4a31163-a37b-4a4f-bdf8-984ef5dde6c6" class="">( 通过后三种红绿蓝混合的方式可以得到超过1600万种颜色 )</p></div></p><h1 id="ebeac13c-dd9b-447b-8670-53438e62496d" class="">布局</h1><h3 id="40ec9bab-3d97-486a-8e07-6a696035d61a" class="">内容对齐属性 <code>text-align</code> </h3><p id="912b9819-50fc-414b-b65e-32eee3bc0b3a" class="">使用对象：    只能对 <span style="border-bottom:0.05em solid">块元素</span> 使用该属性</p><p id="1a177192-e163-4fa8-8677-942f9a5c7592" class="">作用效果：    该 块元素 迭代包含的所有下属 <span style="border-bottom:0.05em solid">内联元素</span> 均应用此对齐方式  （不限于文本）</p><p id="e24b583a-8027-4a2c-9303-f8b5f87f308f" class="">
+</p><p id="f20cad1e-f9b5-4e9e-979e-a7da4fd94075" class="">
+</p></div></article></body></html>
